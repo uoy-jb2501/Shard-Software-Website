@@ -1,8 +1,9 @@
 :root {
     --header-color: #393939;
-    --back-color: hsl(0, 0%, 10%);
-    --page-color: #121212;
+    --back-color: #141516;
+    --page-color: #181a1b;
     --link-color: #946dec;
+    --text-color: #e8e6e3;
     --pad-size: 20%;
 }
 
@@ -37,4 +38,19 @@ h3 {
     padding-left: 1em;
     background-image: linear-gradient(to right, var(--header-color) 50%, var(--back-color));
     margin-right: 1%;
+}
+
+/* Hotizontal Labels */
+#chart_div svg g:nth-child(3) text {
+    fill: var(--text-color);
+}
+
+/* Rows Odd */
+#chart_div svg g:nth-child(3) rect:nth-child(odd) {
+    fill: rgba(0, 0, 0, 0.1);
+}
+
+/* Rows Even */
+#chart_div svg g:nth-child(3) rect:nth-child(even) {
+    fill: transparent;
 }
