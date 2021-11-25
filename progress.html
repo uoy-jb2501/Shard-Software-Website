@@ -1,5 +1,9 @@
 <html>
 <head>
+
+	<h1>Shard Software</h1>
+	<h2>ENG1 Project Progress</h2>
+
 	<link rel="stylesheet" href="style.css">
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script type="text/javascript">
@@ -10,32 +14,78 @@
 			return days * 24 * 60 * 60 * 1000;
 		}
 
+		/* Define row data by sections for easier reading */
+		requirementRows = [
+			//['Requirements', 'Requirements Elicitation', "Requirements",
+			//new Date(2021, 10, 10), new Date(2021, 11, 3), null,  0,  null],
+
+			['ReviewExisting', 'Review Existing Systems', "Requirements",
+			null, null, daysToMilliseconds(4),  0,  null],
+
+			['Interview1', 'Conduct Interview', "Requirements",
+			new Date(2021, 10, 29), null, daysToMilliseconds(1),  0,  ""],
+
+			['Prototype', 'Low-fidelity Prototype', "Requirements",
+			null, null, daysToMilliseconds(3),  0,  "Interview1,ReviewExisting"],
+
+			['Interview2', 'Conduct 2nd Interview', "Requirements",
+			null, null, daysToMilliseconds(1),  0,  "Prototype"],
+
+			['WriteUpRequirements', 'Write Up Requirements', "Requirements",
+			null, null, daysToMilliseconds(7),  0,  "Interview2"],
+		]
+
+		designRows = [
+			//['Design', 'Design', "Design",
+			//null, null, daysToMilliseconds(7), 0, 'Interview1'],
+
+			['DesignBack', 'Design Backend', "Design",
+			null, null, daysToMilliseconds(7),  1,  "Interview1"],
+
+			['DesignFront', 'Design Frontend', "Design",
+			null, null, daysToMilliseconds(7),  0,  "Interview1"],
+		]
+
+		implementationRows = [
+			['ImplementBack', 'Implement Backend', "Implementation",
+			null, null, daysToMilliseconds(7*3),  1,  "DesignBack"],
+
+			['ImplementFront', 'Implement Frontend', "Implementation",
+			null, null, daysToMilliseconds(7*3),  0,  "DesignFront"],
+
+			['ImplementBoth', 'Frontend/Backend Integration', "Implementation",
+			null, null, daysToMilliseconds(7*3),  0,  "DesignFront,DesignBack"],
+		]
+
 		function drawChart() {
 
 			var data = new google.visualization.DataTable();
 			data.addColumn('string', 'Task ID');
 			data.addColumn('string', 'Task Name');
+			data.addColumn('string', 'Resource');
 			data.addColumn('date', 'Start Date');
 			data.addColumn('date', 'End Date');
 			data.addColumn('number', 'Duration');
 			data.addColumn('number', 'Percent Complete');
 			data.addColumn('string', 'Dependencies');
 
-			data.addRows([
-				['Research', 'Find sources',
-				new Date(2015, 0, 1), new Date(2015, 0, 5), null,  100,  null],
-				['Write', 'Write paper',
-				null, new Date(2015, 0, 9), daysToMilliseconds(3), 25, 'Research,Outline'],
-				['Cite', 'Create bibliography',
-				null, new Date(2015, 0, 7), daysToMilliseconds(1), 20, 'Research'],
-				['Complete', 'Hand in paper',
-				null, new Date(2015, 0, 10), daysToMilliseconds(1), 0, 'Cite,Write'],
-				['Outline', 'Outline paper',
-				null, new Date(2015, 0, 6), daysToMilliseconds(1), 100, 'Research']
-			]);
+			rowData = [
+				['Test', 'Testing and Verification', "Test",
+				null, null, daysToMilliseconds(2), 0, 'ImplementBoth'],
+
+				['Deploy', 'Deployment and Maintenance', "Deploy",
+				null, null, daysToMilliseconds(1), 0, 'Test']
+			]
+
+			rowData.push(...requirementRows)
+			rowData.push(...designRows)
+			rowData.push(...implementationRows)
+
+			data.addRows(rowData);
 
 			var options = {
-				height: 275,
+				/* dynamically scale graph as needed */
+				height: data.getNumberOfRows()*42+38,
 				backgroundColor: {
         			fill: '#2e2e2e',
      			},
