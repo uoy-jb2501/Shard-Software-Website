@@ -6,4 +6,6 @@ $.get("includes/headernav.html", function(include){
     $("#headernav").remove()
     // remove script for tidiness
     $("#headernav-loader").remove()
+}).fail(function() {
+    $("#headernav").text("Failed to load headernav file")
 });
