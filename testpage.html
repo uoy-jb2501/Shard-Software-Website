@@ -3,16 +3,7 @@
         <link rel="icon" type="image/x-icon" href="images/favicon.ico">
         <link rel="stylesheet" href="style.css">
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script id="headernav-loader">
-            $.get("includes/headernav.html", function(include){
-                // use headernav as a placeholder to insert html
-                $(include).insertBefore("#headernav")
-                // remove placeholder
-                $("#headernav").remove()
-                // remove script for tidiness
-                $("headernav-loader").remove()
-            })
-        </script>
+        <script id="headernav-loader" src="scripts/insertHeader.js"></script>
     </head>
 
 <div id="headernav"></div>
