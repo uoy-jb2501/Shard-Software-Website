@@ -1,9 +1,19 @@
-<h1>Test Page</h1>
-
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<html>
+    <head>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $.get("includes/headernav.html", function(include){
+                header = $("#headernav")
+                header.parent().append(include)
+                header.remove()
+            })
+        </script>
+    </head>
 
 <div id="headernav"></div>
 
-<script>
-    $("#headernav").load("includes/headernav.html");
-</script>
+<h1>Test Page</h1>
+
+</html>
