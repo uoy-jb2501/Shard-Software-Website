@@ -41,6 +41,8 @@ h3 {
     padding-left: 1em;
     background-image: linear-gradient(to right, var(--header-color) 50%, var(--back-color));
     margin-right: 1%;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .center {
