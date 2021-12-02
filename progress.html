@@ -21,10 +21,10 @@
 			//new Date(2021, 10, 10), new Date(2021, 11, 3), null,  0,  null],
 
 			['ReviewExisting', 'Review Existing Systems', "Requirements",
-			null, null, daysToMilliseconds(4),  0,  null],
+			new Date(2021, 10, 26), null, daysToMilliseconds(7),  10,  null],
 
 			['Interview1', 'Conduct Interview', "Requirements",
-			new Date(2021, 10, 29), null, daysToMilliseconds(1),  0,  ""],
+			new Date(2021, 10, 29), null, daysToMilliseconds(1),  100,  ""],
 
 			['Prototype', 'Low-fidelity Prototype', "Requirements",
 			null, null, daysToMilliseconds(3),  0,  "Interview1,ReviewExisting"],
@@ -41,21 +41,18 @@
 			//null, null, daysToMilliseconds(7), 0, 'Interview1'],
 
 			['DesignBack', 'Design Backend', "Design",
-			null, null, daysToMilliseconds(7),  1,  "Interview1"],
+			null, null, daysToMilliseconds(20),  1,  "Interview1,ReviewExisting"],
 
 			['DesignFront', 'Design Frontend', "Design",
-			null, null, daysToMilliseconds(7),  0,  "Interview1"],
+			null, null, daysToMilliseconds(20),  0,  "Interview1,ReviewExisting"],
 		]
 
 		implementationRows = [
 			['ImplementBack', 'Implement Backend', "Implementation",
-			null, null, daysToMilliseconds(7*3),  1,  "DesignBack"],
+			null, null, daysToMilliseconds(7*3),  1,  "Prototype"],
 
 			['ImplementFront', 'Implement Frontend', "Implementation",
-			null, null, daysToMilliseconds(7*3),  0,  "DesignFront"],
-
-			['ImplementBoth', 'Frontend/Backend Integration', "Implementation",
-			null, null, daysToMilliseconds(7*3),  0,  "DesignFront,DesignBack"],
+			null, null, daysToMilliseconds(7*3),  0,  "Prototype"],
 		]
 
 		function drawChart() {
@@ -72,7 +69,7 @@
 
 			rowData = [
 				['Test', 'Testing and Verification', "Test",
-				null, null, daysToMilliseconds(2), 0, 'ImplementBoth'],
+				null, null, daysToMilliseconds(2), 0, 'DesignBack,DesignFront,ImplementFront,ImplementBack'],
 
 				['Deploy', 'Deployment and Maintenance', "Deploy",
 				null, null, daysToMilliseconds(1), 0, 'Test']
