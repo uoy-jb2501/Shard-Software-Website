@@ -35,14 +35,27 @@ body {
     flex-direction: column;
 }
 
-h1,
-h2,
-h3 {
+nav, h1, h2, h3 {
     padding-left: 1em;
     background-image: linear-gradient(to right, var(--header-color) 50%, var(--back-color));
     margin-right: 1%;
     margin-top: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 2px;
+}
+
+nav {
+    padding: 10px;
+}
+
+nav a {
+    color: var(--text-color);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+}
+
+nav a:hover {
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .center {
