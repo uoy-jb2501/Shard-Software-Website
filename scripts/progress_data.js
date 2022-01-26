@@ -57,10 +57,13 @@ progressData = {
         null, null, daysToMilliseconds(1),  0,  "collegeClass,worldClass"],
 
         ['collegeCombat', 'Setup College (non-ship) Combat', "Implementation",
-        null, null, daysToMilliseconds(5),  0,  "collegePlacement"],
+        null, null, daysToMilliseconds(5),  0,  "collegePlacement,cannonballs"],
 
         ['cannonballs', 'Setup Cannonball Firing System', "Implementation",
         null, null, daysToMilliseconds(2),  80,  "shipClass"],
+
+        ['Submit', 'Submit Project', "Deploy",
+		null, null, daysToMilliseconds(1), 0, "collegeCombat,enemyAI"]
     ],
     
     "2022-01-14":[
@@ -116,10 +119,13 @@ progressData = {
         null, null, daysToMilliseconds(1),  0,  "collegeClass,worldClass"],
 
         ['collegeCombat', 'Setup College (non-ship) Combat', "Implementation",
-        null, null, daysToMilliseconds(5),  0,  "collegePlacement"],
+        null, null, daysToMilliseconds(5),  0,  "collegePlacement,cannonballs"],
 
         ['cannonballs', 'Setup Cannonball Firing System', "Implementation",
         null, null, daysToMilliseconds(2),  0,  "shipClass"],
+
+        ['Submit', 'Submit Project', "Deploy",
+		null, null, daysToMilliseconds(1), 0, "collegeCombat,enemyAI"]
     ],
 
     "2021-10-26":[
