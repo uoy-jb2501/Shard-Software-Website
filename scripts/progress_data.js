@@ -36,10 +36,10 @@ progressData = {
         null, null, daysToMilliseconds(2),  100,  "shipClass"],
 
         ['debug', 'Setup Debug System', "Implementation",
-        new Date(2022, 00, 17), null, daysToMilliseconds(2),  100,  "libgdx"],
+        new Date(2022, 00, 06), null, daysToMilliseconds(2),  100,  "libgdx"],
 
         ['worldClass', 'Setup World Class', "Implementation",
-        new Date(2022, 00, 13), null, daysToMilliseconds(9),  100,  "libgdx,resClass"],
+        new Date(2022, 00, 10), null, daysToMilliseconds(9),  100,  "libgdx,resClass"],
 
         ['minimap', 'Setup Minimap', "Implementation",
         null, null, daysToMilliseconds(3),  100,  "worldClass,resClass"],
@@ -51,7 +51,7 @@ progressData = {
         null, null, daysToMilliseconds(5),  0,  "worldClass,shipClass"],
 
         ['collegeClass', 'Setup College Classes', "Implementation",
-        new Date(2022, 00, 06), null, daysToMilliseconds(2),  0,  "resClass"],
+        null, null, daysToMilliseconds(2),  0,  "entClass"],
 
         ['collegePlacement', 'Setup College Placement', "Implementation",
         null, null, daysToMilliseconds(1),  0,  "collegeClass,worldClass"],
